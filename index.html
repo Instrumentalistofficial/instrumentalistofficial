@@ -4,15 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="The Instrumentalist - Music Producer. Explore beats, productions, and visual work.">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet"> <!-- Link to Google Font -->
     <title>The Instrumentalist</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Jacquarda+Bastarda+9&display=swap" rel="stylesheet"> <!-- Replace 'YourCustomFont' with your chosen font -->
     <style>
         body, html {
             margin: 0;
             padding: 0;
-            height: 100%;
+            height: auto; /* Allow height to expand */
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 1)); /* Gradient from dark to full black */
+            color: #ff6363; /* Pastel red for all text */
+            font-family: Arial, sans-serif;
+            overflow-x: hidden; /* Prevent horizontal scrolling */
         }
         /* Video background styling */
         .video-background {
@@ -21,30 +23,58 @@
             bottom: 0;
             min-width: 100%;
             min-height: 100%;
-            z-index: -1;
-            object-fit: cover;
+            z-index: -2; /* Keep it behind everything */
+            object-fit: cover; /* Cover the entire background */
         }
-        body {
-            color: #ff6363; /* Pastel red for text */
-            font-family: 'YourCustomFont', Arial, sans-serif; /* Custom font */
+        /* Large video styling */
+        .large-video {
+            position: relative;
+            width: 100%;
+            height: 400px; /* Set the height of the large video */
+            overflow: hidden;
+            background: black; /* Fallback background */
+            z-index: 2; /* Bring this video above other content */
+        }
+        .large-video video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            transform: translate(-50%, -50%); /* Center the video */
+            z-index: 2; /* Ensure it stays on top */
+        }
+        /* Styling for sections with backdrop */
+        .backdrop {
+            background-color: rgba(0, 0, 0, 0.7); /* Black backdrop with opacity */
+            backdrop-filter: blur(10px); /* Blur effect */
+            padding: 20px; /* Padding for content */
+            border-radius: 10px; /* Optional rounded corners */
+            position: relative; /* For z-index stacking */
+            z-index: 1; /* Ensure content is on top */
         }
         header {
             text-align: center;
             padding: 20px;
-            background-color: rgba(0, 0, 0, 0.5); /* Adjusted transparency */
+            background-color: rgba(0, 0, 0, 0.8); /* Transparent header */
+            z-index: 3; /* Ensure header is above the video */
+            position: relative; /* For z-index stacking */
         }
         h1 {
             font-size: 3rem;
             letter-spacing: 2px;
             margin: 0;
-            color: #6F1D1B; /* Darker wine red */
+            color: #8B0000; /* Dark wine red */
+            font-family: 'Roboto', sans-serif; /* Use the custom Google Font */
         }
         nav {
             margin: 20px 0;
             text-align: center;
         }
         nav a {
-            color: #ff6363;
+            color: #fff;
             text-decoration: none;
             margin: 0 15px;
             font-size: 1.2rem;
@@ -57,23 +87,23 @@
             text-align: center;
         }
         .about, .projects {
-            background-color: rgba(17, 17, 17, 0.5); /* Dark background with opacity */
+            background-color: rgba(17, 17, 17, 0.8);
         }
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 20px;
+        .contact {
+            background-color: rgba(34, 34, 34, 0.8);
+        }
+        footer {
             padding: 20px;
-            background-color: rgba(0, 0, 0, 0.5); /* Black blur backdrop */
+            background-color: rgba(17, 17, 17, 0.8);
+            text-align: center;
         }
-        .gallery img, .audio-card {
-            width: 100%;
-            border-radius: 10px;
+        audio, img {
+            max-width: 100%;
+            height: auto;
         }
-        .audio-card {
-            background-color: rgba(34, 34, 34, 0.8); /* Darker background for audio */
-            padding: 15px;
-            border-radius: 10px;
+        .gallery img {
+            width: 45%;
+            margin: 2.5%;
         }
         .social-icons img {
             width: 40px;
@@ -89,6 +119,14 @@
         Your browser does not support the video tag.
     </video>
 
+    <!-- Large video section -->
+    <section class="large-video">
+        <video autoplay muted loop>
+            <source src="https://raw.githubusercontent.com/Instrumentalistofficial/instrumentalistofficial/main/Video/biovideo.mp4" type="video/mp4"> <!-- Updated with your video source -->
+            Your browser does not support the video tag.
+        </video>
+    </section>
+
     <header>
         <h1>The Instrumentalist</h1>
         <nav>
@@ -100,7 +138,7 @@
         </nav>
     </header>
 
-    <section id="about" class="section about">
+    <section id="about" class="section about backdrop">
         <h2>About Me</h2>
         <p>I am Prod. Instrumentalist, a producer and a musician with 10+ years of experience. 
         Here you can find everything related to my projects. 
@@ -109,36 +147,29 @@
         Dive in and see how I view the world...</p>
     </section>
 
-    <section id="projects" class="section projects">
+    <section id="projects" class="section projects backdrop">
         <h2>Projects</h2>
         <p>Explore my past and current projects. From intricate beats to full-scale productions, here is where my work comes to life.</p>
-        <div class="gallery">
-            <div class="audio-card">
-                <h3>Audio 1</h3>
-                <audio controls>
-                    <source src="https://raw.githubusercontent.com/Instrumentalistofficial/instrumentalistofficial/main/Audio/Tahdon%20elääF.mp3" type="audio/mpeg">
-                    Your browser does not support the audio element.
-                </audio>
-            </div>
-            <div class="audio-card">
-                <h3>Audio 2</h3>
-                <audio controls>
-                    <source src="https://raw.githubusercontent.com/Instrumentalistofficial/instrumentalistofficial/main/Audio/GRapYeet.mp3" type="audio/mpeg">
-                    Your browser does not support the audio element.
-                </audio>
-            </div>
-            <div class="audio-card">
-                <h3>Audio 3</h3>
-                <audio controls>
-                    <source src="https://raw.githubusercontent.com/Instrumentalistofficial/instrumentalistofficial/main/Audio/VeryProgOwane.mp3" type="audio/mpeg">
-                    Your browser does not support the audio element.
-                </audio>
-            </div>
-            <!-- Add more audio files as needed -->
-        </div>
+        <audio controls>
+            <source src="https://raw.githubusercontent.com/Instrumentalistofficial/instrumentalistofficial/main/Audio/Tahdon%20elääF.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
     </section>
 
-    <section id="visuals" class="section">
+    <section id="beats" class="section backdrop">
+        <h2>Beats for Sale</h2>
+        <p>Check out my latest beats available for purchase. Click to listen and contact me for inquiries.</p>
+        <audio controls>
+            <source src="https://raw.githubusercontent.com/Instrumentalistofficial/instrumentalistofficial/main/Audio/GRapYeet.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        <audio controls>
+            <source src="https://raw.githubusercontent.com/Instrumentalistofficial/instrumentalistofficial/main/Audio/VeryProgOwane.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+    </section>
+
+    <section id="visuals" class="section backdrop">
         <h2>Photography & Visuals</h2>
         <div class="gallery">
             <img src="https://raw.githubusercontent.com/Instrumentalistofficial/instrumentalistofficial/main/images/RedRoom1.jpg?raw=true" alt="Visual work 1">
@@ -147,7 +178,7 @@
         </div>
     </section>
 
-    <section id="contact" class="section contact">
+    <section id="contact" class="section contact backdrop">
         <h2>Contact Me</h2>
         <p>Email: <a href="mailto:instrumentaalisti@gmail.com" style="color: #fff;">instrumentaalisti@gmail.com</a></p>
         <div class="social-icons">
