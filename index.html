@@ -10,6 +10,7 @@
             margin: 0;
             padding: 0;
             height: 100%;
+            overflow: auto; /* Allow scrolling */
         }
         /* Video background styling */
         .video-background {
@@ -24,8 +25,6 @@
         body {
             color: #fff;
             font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
         }
         header {
             text-align: center;
@@ -54,6 +53,7 @@
         .section {
             padding: 50px 20px;
             text-align: center;
+            min-height: 200px; /* Ensure sections have enough height */
         }
         .about, .projects {
             background-color: rgba(17, 17, 17, 0.8);
@@ -66,7 +66,12 @@
             background-color: rgba(17, 17, 17, 0.8);
             text-align: center;
         }
-        audio, img {
+        audio {
+            width: 80%; /* Wider audio player */
+            margin: 20px auto; /* Center the audio player */
+            display: block; /* Ensure it takes full width */
+        }
+        img {
             max-width: 100%;
             height: auto;
         }
