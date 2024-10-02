@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="The Instrumentalist - Music Producer. Explore beats, productions, and visual work.">
-    <title>The Instrumentalist</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet"> <!-- Link to Google Font -->
+    <title>The Instrumentalist</title>
     <style>
         body, html {
             margin: 0;
@@ -33,7 +33,7 @@
             height: 400px; /* Set the height of the large video */
             overflow: hidden;
             background: black; /* Fallback background */
-            z-index: -1; /* Ensure this video is behind the main content */
+            z-index: 2; /* Bring this video above other content */
         }
         .large-video video {
             position: absolute;
@@ -44,7 +44,7 @@
             width: auto;
             height: auto;
             transform: translate(-50%, -50%); /* Center the video */
-            z-index: -1; /* Keep it behind the content */
+            z-index: 2; /* Ensure it stays on top */
         }
         /* Styling for sections with backdrop */
         .backdrop {
@@ -59,7 +59,7 @@
             text-align: center;
             padding: 20px;
             background-color: rgba(0, 0, 0, 0.8); /* Transparent header */
-            z-index: 1; /* Ensure header is above the video */
+            z-index: 3; /* Ensure header is above the video */
             position: relative; /* For z-index stacking */
         }
         h1 {
