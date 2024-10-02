@@ -22,19 +22,24 @@
             font-size: 3rem;
             letter-spacing: 2px;
             margin: 0;
+            color: #ff6363; /* Deep pastel red for the title */
+        }
+        h2 {
+            color: #ff6363; /* Deep pastel red for section headers */
+            font-size: 2rem;
         }
         nav {
             margin: 20px 0;
             text-align: center;
         }
         nav a {
-            color: #fff;
+            color: #ccc; /* Lighter color for navigation links */
             text-decoration: none;
             margin: 0 15px;
             font-size: 1.2rem;
         }
         nav a:hover {
-            text-decoration: underline;
+            color: #ff6363; /* Change to red on hover */
         }
         .section {
             padding: 50px 20px;
@@ -58,10 +63,18 @@
         .gallery img {
             width: 45%;
             margin: 2.5%;
+            border: 3px solid #ff6363; /* Red borders for images */
         }
         .social-icons img {
             width: 40px;
             margin: 0 10px;
+            filter: invert(100%); /* To ensure icons fit with dark mode */
+        }
+        a {
+            color: #ff6363; /* Red accents for links */
+        }
+        a:hover {
+            color: #fff; /* Hovering over links turns them white */
         }
     </style>
 </head>
@@ -79,13 +92,12 @@
 
     <section id="about" class="section about">
         <h2>About Me</h2>
-        <p>I am The Instrumentalist, a music producer with a need to create. Here you can find everything related to my projects. I get inspiration from Jazz, Metalcore, House & EDM, Funk as well as more abstract works, so you'll surely find something for y
-your tastes. My art blends soundscapes with atmospheric visuals. Dive in and see how I view the world...</p>
+        <p>I am The Instrumentalist, a music producer with a need to create. I draw inspiration from Jazz, Metalcore, House & EDM, Funk, and more abstract works. My art blends soundscapes with atmospheric visuals. Dive in and experience the world through my music.</p>
     </section>
 
     <section id="projects" class="section projects">
         <h2>Projects</h2>
-        <p>Explore my past and current projects. From intricate beats to full-scale productions, here is where my work comes to life.</p>
+        <p>Explore my past and current projects, from intricate beats to full-scale productions. Listen to my work and immerse yourself in the sound.</p>
         <audio controls>
             <source src="https://raw.githubusercontent.com/Instrumentalistofficial/instrumentalistofficial/50cba5f1cf8649ebb842ec1a120c6eb80b966863/Audio/Tahdon%20ela%CC%88a%CC%88F.mp3" type="audio/mpeg">
             Your browser does not support the audio element.
@@ -94,7 +106,7 @@ your tastes. My art blends soundscapes with atmospheric visuals. Dive in and see
 
     <section id="beats" class="section">
         <h2>Beats for Sale</h2>
-        <p>Check out my latest beats available for purchase. Click to listen and contact me for inquiries.</p>
+        <p>Check out my latest beats available for purchase. Click to listen, and contact me for inquiries.</p>
         <audio controls>
             <source src="https://raw.githubusercontent.com/Instrumentalistofficial/instrumentalistofficial/50cba5f1cf8649ebb842ec1a120c6eb80b966863/Audio/GRapYeet.mp3" type="audio/mpeg">
             Your browser does not support the audio element.
@@ -110,17 +122,17 @@ your tastes. My art blends soundscapes with atmospheric visuals. Dive in and see
         <div class="gallery">
             <img src="https://raw.githubusercontent.com/Instrumentalistofficial/instrumentalistofficial/main/images/RedRoom1.jpg?raw=true" alt="Visual work 1">
             <img src="https://raw.githubusercontent.com/Instrumentalistofficial/instrumentalistofficial/main/images/RedRoom2.jpg?raw=true" alt="Visual work 2">
-             <img src="https://raw.githubusercontent.com/Instrumentalistofficial/instrumentalistofficial/main/images/RedRoom3.jpg?raw=true" alt="Visual work 3">
+            <img src="https://raw.githubusercontent.com/Instrumentalistofficial/instrumentalistofficial/main/images/RedRoom3.jpg?raw=true" alt="Visual work 3">
         </div>
     </section>
 
     <section id="contact" class="section contact">
         <h2>Contact Me</h2>
-        <p>Email: <a href="mailto:instrumentaalisti@gmail.com" style="color: #fff;">instrumentaalisti@gmail.com</a></p>
+        <p>Email: <a href="mailto:instrumentaalisti@gmail.com">instrumentaalisti@gmail.com</a></p>
         <div class="social-icons">
-            <a href="https://www.instagram.com/unikultti/"><img src="instagram-icon.png" alt="Instagram"></a>
-            <a href="https://www.tiktok.com/@instrumentalistofficial"><img src="tiktok-icon.png" alt="TikTok"></a>
-            <a href="https://www.youtube.com/@MerlinTheInstrumentalist"><img src="youtube-icon.png" alt="YouTube"></a>
+            <a href="https://www.instagram.com/unikultti/"><img src="https://raw.githubusercontent.com/Instrumentalistofficial/instrumentalistofficial/main/images/instagram-icon.png" alt="Instagram"></a>
+            <a href="https://www.tiktok.com/@instrumentalistofficial"><img src="https://raw.githubusercontent.com/Instrumentalistofficial/instrumentalistofficial/main/images/tiktok-icon.png" alt="TikTok"></a>
+            <a href="https://www.youtube.com/@MerlinTheInstrumentalist"><img src="https://raw.githubusercontent.com/Instrumentalistofficial/instrumentalistofficial/main/images/youtube-icon.png" alt="YouTube"></a>
         </div>
     </section>
 
